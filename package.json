@@ -6,6 +6,7 @@
   "dependencies": {
     "deep-diff": "^0.3.2",
     "deep-equal": "^1.0.0",
+    "json-nice": "^1.0.1",
     "translate": "^0.7.0",
     "yandex-translate-api": "^1.0.1"
   },

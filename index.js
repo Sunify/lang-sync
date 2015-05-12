@@ -1,26 +1,18 @@
 import differ from 'deep-diff';
 import normalizeDiff from './normalizeDiff';
 import applyDiff from './applyDiff';
+import getPrevVersionOfFile from './getPrevVersionOfFile';
+import writeLangFile from './writeLangFile';
 
-const ru2 = {
-	"yeap": "Да",
-	"error": "Ошибка",
-	"nope": "Нет",
-	"alert": "Внимание!",
-	"goal": {
-		"title": "Имя",
-		"options": {
-			1: "Раз",
-			2: "Два",
-			3: "Три"
-		}
-	},
-	"valuez": [1, 2, 3]
-};
+import ru2 from './ru';
+import en from './en';
 
-// const diff = normalizeDiff(differ(ru1, ru2) || []);
-// console.log(diff);
+getPrevVersionOfFile('./ru.js').then((ru) => {
+	const diff = normalizeDiff(differ(ru, ru2) || []);
+	console.log(diff);
 
-// applyDiff(en, diff).then((en2) => {
-// 	console.log(en2);
-// });
+	applyDiff(en, diff).then((en2) => {
+		console.log(en2);
+		writeLangFile('en', en2);
+	});
+});
