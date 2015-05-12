@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"yeap": "Да",
 	"error": "Ошибка",
 	"nope": "Нет",

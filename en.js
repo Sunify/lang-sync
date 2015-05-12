@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"yeap": "Yeap",
 	"error": "Error",
 	"nope": "Nope",
