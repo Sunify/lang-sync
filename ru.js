@@ -3,7 +3,7 @@ module.exports = {
 	"error": "Ошибка",
 	"nope": "Нет",
 	"alert": "Внимание!",
-	"goal": {
+	"goall": {
 		"title": "Имя",
 		"options": {
 			1: "Раз",
@@ -11,5 +11,5 @@ module.exports = {
 			3: "Три"
 		}
 	},
-	"valuez": [1, 2, 3]
+	"values": [1, 2, 3]
 };;

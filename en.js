@@ -2,7 +2,7 @@ module.exports = {
   "yeap": "Yeap",
   "error": "Error",
   "nope": "Nope",
-  "goal": {
+  "goall": {
     "options": {
       "1": "One",
       "2": "Two",
@@ -10,10 +10,8 @@ module.exports = {
     },
     "title": "Name"
   },
-  "alert": [
-    "Attention!"
-  ],
-  "valuez": [
+  "alert": "Attention!",
+  "values": [
     1,
     2,
     3

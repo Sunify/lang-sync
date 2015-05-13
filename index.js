@@ -22,14 +22,8 @@ Promise.all(
 	console.log('-----');
 	console.log(prettyjson.render(merged));
 
-	// console.log(enDiff, ruDiff, );
-	// console.log(ruDi);
-	// console.log(enDiff, ruDiff);
-
-	// applyDiff(en, merged).then((en3) => {
-		// console.log(prettyjson.rendeclearr(en3));
-		// writeLangFile('en', en3);
-	// 	// console.log(en, '-------------------', en2, '-------------------', en3);
-	// 	applyDiff(en3, enDiff).then(res => );
-	// });
+	applyDiff(en, merged).then((en3) => {
+		// console.log(prettyjson.render(en3));
+		writeLangFile('en', en3);
+	});
 });
