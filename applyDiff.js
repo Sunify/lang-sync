@@ -46,6 +46,19 @@ function deletePath(obj, path) {
 	});
 }
 
+function updatePath(obj, path, value) {
+	return new Promise((resolve) => {
+		path.reduce((memo, key, i, path) => {
+			if(path.length - 1 === i) {
+				memo[key] = value;
+				resolve();
+			}
+
+			return memo[key];
+		}, obj);
+	});
+}
+
 export default function applyDiff(obj, diff) {
 	return new Promise((resolve) => {
 		Promise.all(diff.map(({ kind, path, rhs}) => {
@@ -60,6 +73,10 @@ export default function applyDiff(obj, diff) {
 
 				case 'D':
 					return deletePath(obj, path);
+					break;
+
+				case 'E':
+					return updatePath(obj, path, rhs);
 					break;
 			}
 		}, obj)).then(() => resolve(obj));
