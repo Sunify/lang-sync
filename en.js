@@ -2,20 +2,20 @@ module.exports = {
   "yeap": "Yeap",
   "error": "Error",
   "nope": "Nope",
-  "alert": "Attention!",
-  "chat": "Chat!",
   "goal": {
     "options": {
       "1": "First",
       "2": "Two",
-      "3": "Three"
+      "4": "Three"
     },
     "title": "Name"
   },
-  "template": "Template",
   "valuez": [
     1,
     2,
     3
-  ]
+  ],
+  "allert": "Attention!",
+  "chad": "Chat!",
+  "template!": "Template"
 };
