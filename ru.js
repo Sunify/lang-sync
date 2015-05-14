@@ -12,5 +12,6 @@ module.exports = {
 			3: "Три"
 		}
 	},
-	"values": [1, 2, 3]
-};;
+	"valuez": [1, 2, 3],
+	"template": "Шаблон"
+};

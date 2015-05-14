@@ -21,7 +21,7 @@ function detectRenamings(diff) {
 	}, []);
 }
 
-export default function normalizeDiff(diff) {
+export default function normalizeDiff(diff = []) {
 	const renamings = detectRenamings(diff);
 	diff = diff.filter(({ path, kind }) => {
 		return renamings.filter((r) => {

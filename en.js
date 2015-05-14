@@ -3,18 +3,19 @@ module.exports = {
   "error": "Error",
   "nope": "Nope",
   "alert": "Attention!",
-  "values": [
-    1,
-    2,
-    3
-  ],
-  "chat": "Chat",
+  "chat": "Chat!",
   "goal": {
     "options": {
-      "1": "One",
+      "1": "First",
       "2": "Two",
       "3": "Three"
     },
     "title": "Name"
-  }
+  },
+  "template": "Template",
+  "valuez": [
+    1,
+    2,
+    3
+  ]
 };

@@ -6,10 +6,12 @@
   "dependencies": {
     "deep-diff": "^0.3.2",
     "deep-equal": "^1.0.0",
+    "deepcopy": "^0.5.0",
     "json-nice": "^1.0.1",
     "object-assign": "^2.0.0",
     "prettyjson": "^1.1.0",
     "translate": "^0.7.0",
+    "traverse": "^0.6.6",
     "yandex-translate-api": "^1.0.1"
   },
   "devDependencies": {},
