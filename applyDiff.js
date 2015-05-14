@@ -7,7 +7,7 @@ function addValue(obj, path, value) {
 			if(path.length - 1 === i) {
 				memo[key] = value;
 				translate(value, { to: 'en' }, (err, { text }) => {
-					memo[key] = text;
+					memo[key] = text[0];
 					resolve();
 				});
 			}

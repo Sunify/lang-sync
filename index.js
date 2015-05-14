@@ -13,17 +13,17 @@ Promise.all(
 	['./en.js', './ru.js'].map(getPrevVersionOfFile)
 ).then(([en, ru]) => {
 	const ruDiff = normalizeDiff(differ(ru, ru2) || []);
-	const enDiff = normalizeDiff(differ(en, en2) || []);
-	const merged = mergeDiff(enDiff, ruDiff);
+	// const merged = mergeDiff(enDiff, ruDiff);
 
-	console.log(prettyjson.render(enDiff));
-	console.log('-----');
+	console.log('=====');
 	console.log(prettyjson.render(ruDiff));
 	console.log('-----');
-	console.log(prettyjson.render(merged));
+	// console.log(prettyjson.render(merged));
 
-	applyDiff(en, merged).then((en3) => {
+	applyDiff(en, ruDiff).then((en3) => {
+		const enDiff = normalizeDiff(differ(en3, en2) || []);
+		console.log(prettyjson.render(enDiff));
 		// console.log(prettyjson.render(en3));
-		writeLangFile('en', en3);
+		// writeLangFile('en', en3);
 	});
 });
