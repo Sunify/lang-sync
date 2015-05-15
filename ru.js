@@ -9,9 +9,10 @@ module.exports = {
 		"options": {
 			1: "Раз!",
 			2: "Два",
-			4: "Три"
+			5: "Три"
 		}
 	},
 	"valuez": [1, 2, 3],
-	"template!": "Шаблон"
+	"templade": "Шаблон",
+	"victory": "Победа!"
 };

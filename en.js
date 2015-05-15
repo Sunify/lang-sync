@@ -6,7 +6,7 @@ module.exports = {
     "options": {
       "1": "First",
       "2": "Two",
-      "4": "Three"
+      "5": "Three!"
     },
     "title": "Name"
   },
@@ -17,5 +17,6 @@ module.exports = {
   ],
   "allert": "Attention!",
   "chad": "Chat!",
-  "template!": "Template"
+  "victory": "Victory!",
+  "templade": "Template"
 };
