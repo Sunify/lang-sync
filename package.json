@@ -8,7 +8,9 @@
     "deep-diff": "^0.3.2",
     "deep-equal": "^1.0.0",
     "deepcopy": "^0.5.0",
+    "js-beautify": "^1.5.5",
     "json-nice": "^1.0.1",
+    "mocha": "^2.2.5",
     "mockery": "^1.4.0",
     "object-assign": "^2.0.0",
     "prettyjson": "^1.1.0",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "babel-node": "babel-node"
+    "babel-node": "babel-node",
+    "test": "mocha --require babelhook"
   }
 }
