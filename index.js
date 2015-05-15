@@ -18,20 +18,6 @@ function isSameChange(ch1, ch2) {
 	return ch1.kind === ch2.kind && equal(ch1.path, ch2.path);
 }
 
-function indexOf(arr, item) {
-	let res = -1;
-	arr.some((arrItem, i) => {
-		if(isSameChange(arrItem, item)) {
-			res = i;
-			return true;
-		} else {
-			return false;
-		}
-	});
-
-	return res;
-}
-
 function dedupe(diff) {
 	let except = [];
 
@@ -69,39 +55,31 @@ function nullDict(dict) {
 	return dict;
 }
 
-// const nulledRu = nullDict(ru2);
-// const nulledEn = nullDict(en2);
+function syncDict(dict, dictBase, src, srcBase) {
+	const srcDiff = normalizeDiff(differ(srcBase, src));
+	const dictDiff = normalizeDiff(differ(dictBase, dict));
+
+	const merged = dedupe(
+		normalizeDiff(mergeDiff(
+			normalizeDiff(differ(
+				nullDict(dict),
+				nullDict(src)
+			)),
+			mergeDiff(
+				srcDiff,
+				dictDiff.filter(({ kind }) => kind !== 'M')
+			)
+		))
+	);
+
+	return applyDiff(dictBase, merged);
+}
 
 
 Promise.all(
 	['./en.js', './ru.js'].map(getPrevVersionOfFile)
 ).then(([en, ru]) => {
-	const ruDiff = normalizeDiff(differ(ru, ru2));
-	const enDiff = normalizeDiff(differ(en, en2));
-	// const nullDiff = ;
-	const merged = dedupe(
-		normalizeDiff(mergeDiff(
-			normalizeDiff(differ(
-				nullDict(en2),
-				nullDict(ru2)
-			)),
-			mergeDiff(
-				ruDiff,
-				enDiff.filter(({ kind }) => kind !== 'M')
-			)
-		))
-	);
-
-	// console.log(prettyjson.render(nullDiff));
-
-	// console.log(prettyjson.render(ruDiff));
-	// console.log('-----');
-	// console.log(prettyjson.render(enDiff));
-	console.log('-----');
-	console.log(prettyjson.render(merged));
-
-	applyDiff(en, merged).then((en3) => {
-		// console.log(prettyjson.render(en3));
-		writeLangFile('en', en3);
+	syncDict(en2, en, ru2, ru).then((res) => {
+		writeLangFile('en', res);
 	});
 });

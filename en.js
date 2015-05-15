@@ -17,6 +17,6 @@ module.exports = {
   ],
   "allert": "Attention!",
   "chad": "Chat!",
-  "victory": "Victory!",
+  "victory": "Victory",
   "templade": "Template"
 };
